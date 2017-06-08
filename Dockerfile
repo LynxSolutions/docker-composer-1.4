@@ -7,7 +7,7 @@ RUN apt-get update && apt-get install -y openssh-client rsync libssl-dev \
   && rm -r /var/lib/apt/lists/*
 
 #install mysql pdo
-RUN docker-php-ext-install pdo pdo_mysql
+RUN docker-php-ext-install pdo pdo_mysql bcmath
 
 #install mongodb php extension
 RUN pecl install mongodb-1.2.9 \
