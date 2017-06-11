@@ -2,9 +2,12 @@
 FROM composer/composer
 MAINTAINER Nimrod Nagy <nimrod.nagy@lynxsolutions.eu>
 
+# Latest Git version
+RUN echo "deb http://ftp.us.debian.org/debian testing main contrib non-free" >> /etc/apt/sources.list
+
 # Install rsync for deployment
 RUN apt-get update  \
-  && apt-get install -y openssh-client rsync libssl-dev zlib1g-dev libicu-dev g++ \
+  && apt-get install -y openssh-client rsync libssl-dev zlib1g-dev libicu-dev g++ git \
   && rm -r /var/lib/apt/lists/*
 
 RUN docker-php-ext-configure intl
