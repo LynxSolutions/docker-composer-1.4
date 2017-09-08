@@ -1,5 +1,5 @@
 # Pull base image.
-FROM composer/composer
+FROM composer:1.4
 MAINTAINER Nimrod Nagy <nimrod.nagy@lynxsolutions.eu>
 
 # Latest Git version
